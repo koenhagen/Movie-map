@@ -240,8 +240,8 @@ if ('compilerOptions' in tsconfig && 'paths' in tsconfig.compilerOptions) {
 		// Our tsconfig uses glob path formats, whereas webpack just wants directories
 		// We'll need to transform the glob format into a format acceptable to webpack
 
-		const wpAlias = alias.replace(/(\\|\/)\*$/, '');
-		const wpPaths = paths.map((p: string) => p.replace(/(\\|\/)\*$/, ''));
+		const wpAlias = alias.replace(/([\\/])\*$/, '');
+		const wpPaths = paths.map((p: string) => p.replace(/([\\/])\*$/, ''));
 
 		if (config.resolve && config.resolve.alias) {
 			if (!(wpAlias in config.resolve.alias) && wpPaths.length) {
