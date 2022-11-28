@@ -9,7 +9,7 @@ const cliProgress = require('cli-progress');
 const KEY = '0e9c7a63a1bc4d8309d3290e6d92782d';
 
 export async function getIds() {
-    console.log('Getting ids from TMDb');
+    console.log('Getting ids from TMDb!');
     const ids = [];
 
     const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
