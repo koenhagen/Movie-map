@@ -9,7 +9,7 @@ const cliProgress = require('cli-progress');
 const KEY = '0e9c7a63a1bc4d8309d3290e6d92782d';
 
 export async function getIds() {
-    console.log('Getting ids from TMDb');
+    console.log('Getting ids from TMDb!');
     const ids = [];
 
     const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
@@ -35,6 +35,7 @@ export async function getIds() {
 }
 
 export async function storeMetadata(ids: number[] = [], filename = 'data/metadata.json') {
+    console.log('Getting metadata from TMDb');
     const metadata = JSON.parse(fs.readFileSync(filename).toString());
     const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     bar.start(ids.length - _.size(metadata), 0);
